@@ -152,16 +152,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="italic"
-        android:text=" email us at sma@gmail.co.ug"
+        android:text="Reach us on info@smamonitoroingsystem"
         android:textSize="14sp"
         android:padding="5dp"
         android:textColor="#0289F4"
+        android:clickable="true"
+        android:focusable="true"
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="All rights reserved"
+        android:text="All rights reserved."
         android:textStyle="bold"
         android:textSize="14sp"
         android:textColor="@color/black"
