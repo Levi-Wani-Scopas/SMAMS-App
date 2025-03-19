@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "656656830120",
+    "project_id": "smams-1be63",
+    "storage_bucket": "smams-1be63.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:656656830120:android:e57b6c47da825bbb987c9d",
+        "android_client_info": {
+          "package_name": "com.example.smams"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCY7oCLcD44224ACzm2jm6QRQpMKwKIv5Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
