@@ -10,20 +10,19 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class AdminLoginActivity extends AppCompatActivity {
+public class AdminSignUp extends AppCompatActivity {
 
-    TextView toSignUp;
+    TextView toLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_admin_login);
+        setContentView(R.layout.activity_admin_sign_up);
 
-        toSignUp = findViewById(R.id.AdminSignup);
+        toLogin = findViewById(R.id.adminBackToLogin);
 
-
-        toSignUp.setOnClickListener(view -> startActivity(new Intent(AdminLoginActivity.this, AdminSignUp.class)));
+        toLogin.setOnClickListener(view -> startActivity(new Intent(AdminSignUp.this, AdminLoginActivity.class)));
 
     }
 }

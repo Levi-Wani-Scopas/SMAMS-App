@@ -71,7 +71,7 @@
             android:id="@+id/DoctorUsername"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="Username"
+            android:hint="Email"
             android:paddingLeft="10dp"
             android:textColor="@color/black"
             android:textColorHint="#999999"

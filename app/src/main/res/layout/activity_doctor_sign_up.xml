@@ -5,8 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PatientSignUp"
-    android:orientation="vertical"
+    tools:context=".DoctorSignUp" android:orientation="vertical"
     android:padding="20dp"
     android:gravity="center"
     android:background="@color/white">
@@ -19,15 +18,15 @@
         android:layout_centerInParent="true"/>
 
     <ImageView
-        android:id="@+id/PatientLogo"
+        android:id="@+id/DoctorLogo"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:src="@drawable/patient"
+        android:src="@drawable/doctor"
         android:layout_gravity="center_horizontal"
         android:contentDescription="App Logo" />
 
     <TextView
-        android:id="@+id/PatientSubText"
+        android:id="@+id/DoctorSubText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ensure to input correct data and set a strong password"
@@ -37,83 +36,98 @@
         android:layout_marginBottom="10dp"
         android:layout_gravity="center_horizontal" />
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:background="#3B6F97"
+        android:background="#98472F0B"
         android:padding="20dp"
         android:elevation="10dp">
 
+
         <TextView
-            android:id="@+id/PatientSignUp"
+            android:id="@+id/doctorSignUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Patient Sign Up"
-            android:textColor="@color/white"
+            android:text="Doctor Sign Up"
             android:textSize="24sp"
             android:textStyle="bold"
+            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="20dp" />
 
     <EditText
-        android:id="@+id/patientFullName"
+        android:id="@+id/doctorFullName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Full Name"
-        android:inputType="textPersonName"
         android:background="@color/white"
-        android:textColorHint="#95C1E4"
+        android:textColorHint="#C1BDA9"
         android:textColor="@color/black"
         android:padding="10dp"
         android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@id/PatientSignUp"/>
+        android:inputType="textPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/doctorSignUp"/>
 
     <EditText
-        android:id="@+id/patientEmail"
+        android:id="@+id/doctorEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Email"
-        android:inputType="textEmailAddress"
         android:background="@color/white"
-        android:textColorHint="#95C1E4"
+        android:textColorHint="#C1BDA9"
         android:textColor="@color/black"
         android:padding="10dp"
         android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@id/patientFullName"/>
+        android:inputType="textEmailAddress"
+        app:layout_constraintTop_toBottomOf="@id/doctorFullName"/>
 
     <EditText
-        android:id="@+id/patientPassword"
+        android:id="@+id/doctorSpecialization"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Specialization (e.g., Cardiologist)"
+        android:background="@color/white"
+        android:textColorHint="#C1BDA9"
+        android:textColor="@color/black"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@id/doctorEmail"/>
+
+    <EditText
+        android:id="@+id/doctorPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
-        android:inputType="textPassword"
         android:background="@color/white"
-        android:textColorHint="#95C1E4"
+        android:textColorHint="#C1BDA9"
         android:textColor="@color/black"
         android:padding="10dp"
         android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@id/patientEmail"/>
+        android:inputType="textPassword"
+        app:layout_constraintTop_toBottomOf="@id/doctorSpecialization"/>
 
     <EditText
-        android:id="@+id/patientConfirmPassword"
+        android:id="@+id/doctorConfirmPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Confirm Password"
-        android:inputType="textPassword"
         android:background="@color/white"
-        android:textColorHint="#95C1E4"
+        android:textColorHint="#C1BDA9"
         android:textColor="@color/black"
         android:padding="10dp"
         android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@id/patientPassword"/>
+        android:inputType="textPassword"
+        app:layout_constraintTop_toBottomOf="@id/doctorPassword"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
-        android:id="@+id/patientSignUpButton"
+        android:id="@+id/doctorSignUpButton"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
@@ -122,7 +136,7 @@
         android:backgroundTint="#E4DFC4"/>
 
     <TextView
-        android:id="@+id/patientBackToLogin"
+        android:id="@+id/DoctorBackToLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"

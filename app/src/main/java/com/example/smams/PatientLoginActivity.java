@@ -1,5 +1,6 @@
 package com.example.smams;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,13 +20,18 @@ import com.google.firebase.database.DatabaseReference;
 public class PatientLoginActivity extends AppCompatActivity {
 
 
-    private String role;
+    TextView toSignUp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_patient_login);
+
+        toSignUp = findViewById(R.id.PatientSignup);
+
+
+        toSignUp.setOnClickListener(view -> startActivity(new Intent(PatientLoginActivity.this, PatientSignUp.class)));
 
     }
 }
