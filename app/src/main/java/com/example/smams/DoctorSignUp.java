@@ -72,6 +72,11 @@ public class DoctorSignUp extends AppCompatActivity {
             return;
         }
 
+        if (password.length() < 6) {
+            Toast.makeText(this, "Password must be at least 6 characters", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         progressBar.setVisibility(View.VISIBLE);
 
         mAuth.createUserWithEmailAndPassword(email, password)

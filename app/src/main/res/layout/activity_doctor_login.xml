@@ -11,6 +11,21 @@
     android:gravity="center"
     android:padding="20dp">
 
+    <ImageView
+        android:id="@+id/DoctorBack"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/arrow_back"
+        android:contentDescription="return to previous"
+        android:layout_gravity="start|top" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_centerInParent="true"/>
+
     <!-- App Logo -->
     <ImageView
         android:id="@+id/DoctorLogo"
@@ -48,7 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:background="#EBE8D6"
+        android:background="@drawable/login_rounded_shape"
         android:padding="20dp"
         android:elevation="10dp">
 

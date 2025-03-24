@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/tv_medicine_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Medicine Name"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:paddingBottom="4dp"
+        android:textColor="@color/blue"/>
+
+    <TextView
+        android:id="@+id/tv_dosage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dosage"
+        android:paddingBottom="4dp"
+        android:textColor="#838383"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/tv_start_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start Date"
+        android:paddingBottom="4dp"
+        android:textColor="#838383"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/tv_end_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="End Date"
+        android:paddingBottom="4dp"
+        android:textColor="#838383"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/tv_repeat_option"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Repeat Option"
+        android:paddingBottom="4dp"
+        android:textColor="#838383"
+        android:textSize="15sp"/>
+</LinearLayout>

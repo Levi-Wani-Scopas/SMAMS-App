@@ -40,7 +40,7 @@
         android:orientation="vertical"
 
         android:padding="30dp"
-        android:background="#EBE8D6"
+        android:background="@drawable/login_rounded_shape"
         android:elevation="10dp">
 
         <TextView
@@ -66,7 +66,7 @@
             app:layout_constraintTop_toBottomOf="@+id/text"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/ImageDoctors"
-            app:layout_constraintHorizontal_chainStyle="spread_inside"/>
+            app:layout_constraintHorizontal_chainStyle="spread_inside" />
 
         <TextView
             android:id="@+id/Txtpatient"

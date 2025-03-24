@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class SplashActivity extends AppCompatActivity {
 
+
     Handler handler = new Handler();
     ImageView splash1;
 

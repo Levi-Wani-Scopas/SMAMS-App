@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="10dp"
+    tools:context=".PatientDashboardFragment">
+
+
+    <!-- CardView Below Toolbar -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/medicineReminderCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@color/white"
+        android:elevation="8dp"
+        app:cardCornerRadius="12dp"
+        tools:ignore="MissingConstraints">
+
+        <!-- CardView Content -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <!-- ImageView -->
+            <ImageView
+                android:id="@+id/reminderImg"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="15dp"
+                android:src="@drawable/realreminder" />
+
+            <!-- TextView -->
+            <TextView
+                android:id="@+id/card_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="Medicine Reminder"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <GridLayout
+        android:id="@+id/grid"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_margin="6dp"
+        android:columnCount="2"
+        android:rowCount="3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/medicineReminderCard">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/stepsCount"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:backgroundTint="@color/blue"
+            android:paddingTop="5dp"
+            app:cardCornerRadius="12dp"
+            android:elevation="8dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+
+                <TextView
+                    android:id="@+id/displayReminders"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="7dp"
+                    android:gravity="bottom|center"
+                    android:text="Saved Reminders"
+                    android:textColor="@color/white"
+                    android:textSize="15dp"
+                    android:textStyle="normal" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/pharmacy"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:backgroundTint="@color/white"
+            app:cardCornerRadius="12dp"
+            android:elevation="8dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <TextView
+                    android:id="@+id/upcomingText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="7dp"
+                    android:gravity="bottom|center"
+                    android:text="Pharmacy"
+                    android:textColor="@color/blue"
+                    android:textSize="15dp"
+                    android:textStyle="normal" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+    </GridLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

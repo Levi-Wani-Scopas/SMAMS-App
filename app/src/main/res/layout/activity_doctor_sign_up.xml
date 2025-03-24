@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:background="#98472F0B"
+        android:background="@drawable/signup_rounded_background"
         android:padding="20dp"
         android:elevation="10dp">
 
@@ -124,6 +124,14 @@
         android:inputType="textPassword"
         app:layout_constraintTop_toBottomOf="@id/doctorPassword"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="The password must be at least 6 characters"
+            android:textColor="@color/white"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/doctorConfirmPassword"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
@@ -140,7 +148,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:textColor="@color/black"
+        android:textColor="#C50404"
         android:textSize="15sp"
         android:padding="15dp"
         android:text="Already have an account? Login"/>
