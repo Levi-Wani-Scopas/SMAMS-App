@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -111,9 +112,12 @@ public class AddReminderActivity extends AppCompatActivity {
 
         TimePickerDialog timePickerDialog = new TimePickerDialog(this,
                 (view, hourOfDay, minuteOfHour) -> {
-                    String time = String.format(Locale.getDefault(), "%02d:%02d", hourOfDay, minuteOfHour);
+                    String time = String.format(Locale.getDefault(), "%02d:%02d %s",
+                            (hourOfDay % 12 == 0 ? 12 : hourOfDay % 12),
+                            minuteOfHour,
+                            (hourOfDay >= 12 ? "PM" : "AM"));
                     listener.onTimeSelected(time);
-                }, hour, minute, true);
+                }, hour, minute, false); // Use 12-hour format by setting false
         timePickerDialog.show();
     }
 
@@ -140,7 +144,7 @@ public class AddReminderActivity extends AppCompatActivity {
                     Toast.makeText(this, "Reminder Saved Successfully", Toast.LENGTH_SHORT).show();
 
                     // Schedule Notifications
-                    scheduleNotifications(medicineName, dosage, reminderTimes);
+                    scheduleNotifications(medicineName, dosage, reminderTimes, reminderId);
 
                     finish(); // Close the activity after saving
                 })
@@ -149,25 +153,41 @@ public class AddReminderActivity extends AppCompatActivity {
                 });
     }
 
-    private void scheduleNotifications(String medicineName, String dosage, List<String> times) {
-        SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm", Locale.getDefault());
+    private void scheduleNotifications(String medicineName, String dosage, List<String> times, String reminderId) {
+        SimpleDateFormat inputFormat = new SimpleDateFormat("hh:mm a", Locale.getDefault());
+        SimpleDateFormat outputFormat = new SimpleDateFormat("HH:mm", Locale.getDefault());
 
         for (String time : times) {
             try {
+                // Convert 12-hour time to 24-hour format
+                Date date = inputFormat.parse(time);
+                String timeIn24Hr = outputFormat.format(date);
+
                 Calendar calendar = Calendar.getInstance();
-                Date reminderTime = timeFormat.parse(time);
+                Date reminderTime = outputFormat.parse(timeIn24Hr);
 
                 if (reminderTime != null) {
                     calendar.set(Calendar.HOUR_OF_DAY, reminderTime.getHours());
                     calendar.set(Calendar.MINUTE, reminderTime.getMinutes());
+                    calendar.set(Calendar.SECOND, 0);
+
+                    // Check if the time is in the past
+                    if (calendar.before(Calendar.getInstance())) {
+                        calendar.add(Calendar.DAY_OF_MONTH, 1);
+                    }
+
+                    long delayInMillis = calendar.getTimeInMillis() - System.currentTimeMillis();
+                    Log.d("AddReminderActivity", "Scheduling notification for: " + time);
+                    Log.d("AddReminderActivity", "Delay (ms): " + delayInMillis);
 
                     Data data = new Data.Builder()
                             .putString("medicineName", medicineName)
                             .putString("dosage", dosage)
+                            .putString("reminderId", reminderId) // Include reminder ID
                             .build();
 
                     OneTimeWorkRequest workRequest = new OneTimeWorkRequest.Builder(ReminderWorker.class)
-                            .setInitialDelay(calendar.getTimeInMillis() - System.currentTimeMillis(), java.util.concurrent.TimeUnit.MILLISECONDS)
+                            .setInitialDelay(delayInMillis, java.util.concurrent.TimeUnit.MILLISECONDS)
                             .setInputData(data)
                             .build();
 

@@ -23,7 +23,7 @@
         android:theme="@style/Theme.SMAMS"
         tools:targetApi="31">
         <activity
-            android:name=".Pharmacy"
+            android:name=".DosageHistoryActivity"
             android:exported="false" />
         <activity
             android:name=".DisplayRemindersActivity"
@@ -76,6 +76,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver android:name=".DosageActionReceiver" />
 
 
     </application>

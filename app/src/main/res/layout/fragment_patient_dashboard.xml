@@ -95,7 +95,7 @@
 
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/pharmacy"
+            android:id="@+id/DosageTrack"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_rowWeight="1"
@@ -111,12 +111,12 @@
 
 
                 <TextView
-                    android:id="@+id/upcomingText"
+                    android:id="@+id/dosageTrack"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="7dp"
                     android:gravity="bottom|center"
-                    android:text="Pharmacy"
+                    android:text="Dosage Track"
                     android:textColor="@color/blue"
                     android:textSize="15dp"
                     android:textStyle="normal" />
@@ -125,6 +125,53 @@
         </androidx.cardview.widget.CardView>
 
     </GridLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/progressCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:elevation="8dp"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/grid"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:gravity="center"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/progressTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dosage Progress"
+                android:textColor="@color/blue"
+                android:textSize="18sp"
+                android:layout_marginBottom="8dp"/>
+
+            <ProgressBar
+                android:id="@+id/dosageProgressBar"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:progressTint="@color/blue"
+                android:layout_marginBottom="8dp"
+                android:max="100"/>
+
+            <TextView
+                android:id="@+id/progressPercentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0%"
+                android:textColor="@color/yellow"
+                android:textSize="16sp"/>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
 
 

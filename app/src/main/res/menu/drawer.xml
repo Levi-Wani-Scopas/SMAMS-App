@@ -1,6 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item
+        android:id="@+id/nav_settings"
+        android:title="Settings"
+        android:icon="@drawable/settings"/>
 
+    <item
+        android:id="@+id/nav_terms_and_conditions"
+        android:title="Terms and Conditions"
+        android:icon="@drawable/terms_and_condition"/>
+
+    <item
+        android:id="@+id/nav_privacy"
+        android:title="Privacy"
+        android:icon="@drawable/privacy"/>
+
+    <item
+        android:id="@+id/nav_share"
+        android:title="Share"
+        android:icon="@drawable/share"/>
+
+    <item
+        android:id="@+id/nav_help"
+        android:title="Help"
+        android:icon="@drawable/help"/>
+
+    <item
+        android:id="@+id/nav_cookies"
+        android:title="Cookies"
+        android:icon="@drawable/cookies"/>
+
+    <item
+        android:id="@+id/nav_aboutUs"
+        android:title="About Us"
+        android:icon="@drawable/aboutus"/>
+    <item
+        />
+    <item
+        />
+
+
+    <group android:id="@+id/group_bottom">
+        <item
+            android:id="@+id/nav_aboutUs"
+            android:title="SMAMS"
+            />
+    </group>
 
 </menu>
