@@ -5,10 +5,14 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.*;
 
 import java.util.ArrayList;
@@ -22,6 +26,7 @@ public class DosageHistoryActivity extends AppCompatActivity {
     private DosageHistoryAdapter adapter;
     private List<DosageHistory> dosageHistoryList = new ArrayList<>();
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +35,8 @@ public class DosageHistoryActivity extends AppCompatActivity {
         rvDosageHistory = findViewById(R.id.rv_dosage_history);
         tvSummary = findViewById(R.id.tv_summary);
         backImg = findViewById(R.id.btn_exit);
+
+
 
 
         backImg.setOnClickListener(view -> startActivity(new Intent(DosageHistoryActivity.this, PatientDashboard.class)));

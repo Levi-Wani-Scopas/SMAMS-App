@@ -1,16 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PatientDoctorFragment">
+    android:background="@color/white"
+    tools:context=".PatientDoctorFragment"
+    android:orientation="vertical"
+    android:padding="16dp">
 
-    <!-- TODO: Update blank fragment layout -->
+
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Doctors"
-        android:textSize="20sp"
-        android:textAlignment="center"/>
+        android:id="@+id/no_doctor_selected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No doctor selected"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_gravity="center"
+        android:visibility="visible" />
 
-</FrameLayout>
+    <LinearLayout
+        android:id="@+id/doctor_details_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:padding="10dp"
+            android:id="@+id/CancelDoctor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:textSize="17sp"
+            android:layout_gravity="end"
+            android:textColor="@color/blue"
+            />
+
+        <ImageView
+            android:id="@+id/doctor_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop" />
+
+        <ImageView
+            android:id="@+id/email_icon"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/ic__email"
+            android:contentDescription="Email Icon"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/doctor_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:paddingTop="8dp"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/blue"/>
+
+        <TextView
+            android:id="@+id/doctor_specialization"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#03A9F4"
+            android:textSize="15sp"
+            android:paddingTop="8dp"/>
+
+        <TextView
+            android:id="@+id/doctor_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#97130A"
+            android:textSize="15sp"
+            />
+
+        <TextView
+            android:id="@+id/doctor_biography"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingTop="8dp"
+            android:textSize="15sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/doctor_working_hours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#03A9F4"
+            android:layout_marginTop="10dp"/>
+
+        <Button
+            android:id="@+id/book_appointment_button"
+            android:layout_width="200dp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:text="Book Appointment"
+            android:backgroundTint="@color/blue"
+            android:textColor="@color/white"
+            android:layout_marginTop="16dp" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <!-- Toolbar -->
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue"
+        android:elevation="4dp"
+        android:padding="8dp">
+
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- Main Form -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+
+            <!-- Doctor Name -->
+            <TextView
+                android:id="@+id/doctor_name_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Booking Appointment With:"
+                android:textColor="@color/blue"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/doctor_name_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Doctor Name"
+                android:textSize="17sp"
+                android:textColor="#03A9F4"
+                android:textStyle="italic"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Patient Details Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Patient Details:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/blue"/>
+
+            <!-- Patient Name -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintTextColor="@color/blue"
+                app:boxStrokeColor="@color/blue">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/patient_name_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Full Name"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/blue"
+                   />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Patient Phone number -->
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintTextColor="@color/blue"
+                app:boxStrokeColor="@color/blue">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/phone_number_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter phone number"
+                    android:inputType="phone"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/blue"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Patient Email -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintTextColor="@color/blue"
+                app:boxStrokeColor="@color/blue">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/email_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter email address"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/blue"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Appointment Details Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Appointment Details:"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/blue"
+                android:layout_marginTop="16dp" />
+
+            <Button
+                android:id="@+id/date_picker_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pick Date"
+                android:textColor="@color/blue"
+                android:backgroundTint="#5DC7C4C4"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/selected_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No date selected"
+                android:textColor="#97130A"
+                android:layout_marginBottom="16dp" />
+
+            <Button
+                android:id="@+id/time_picker_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pick Time"
+                android:textColor="@color/blue"
+                android:backgroundTint="#5DC7C4C4"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/selected_time"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="16dp"
+                android:text="No time selected"
+                android:textColor="#97130A" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintTextColor="@color/blue"
+                app:boxStrokeColor="@color/blue">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/reason_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter reason for appointment"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/blue"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Next of Kin Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Next of Kin Details:"
+                android:textColor="@color/blue"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintTextColor="@color/blue"
+                app:boxStrokeColor="@color/blue">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/next_of_kin_name_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter next of kin's name"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/blue"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintTextColor="@color/blue"
+                app:boxStrokeColor="@color/blue">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/next_of_kin_phone_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter next of kin's phone number"
+                    android:inputType="phone"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/blue"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Submit Button -->
+            <Button
+                android:id="@+id/submit_appointment_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/blue"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -160,7 +160,7 @@
                 android:layout_height="wrap_content"
                 android:progressTint="@color/blue"
                 android:layout_marginBottom="8dp"
-                android:max="100"/>
+                android:max="100" />
 
             <TextView
                 android:id="@+id/progressPercentage"
@@ -170,8 +170,296 @@
                 android:textColor="@color/yellow"
                 android:textSize="16sp"/>
 
+
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
+
+
+    <TextView
+        android:id="@+id/meetDoctor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Doctors For You"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:textColor="@color/blue"
+        android:layout_marginTop="20dp"
+        android:paddingStart="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/progressCard" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/meetDoctor">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <!--1st CardViews will be dynamically added here -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:background="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:background="@color/white">
+
+                    <ImageView
+                        android:id="@+id/doctor_image1"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/levi" />
+
+                    <TextView
+                        android:id="@+id/doctor_name1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dr. Levi Wani Scopas"
+                        android:textStyle="bold"
+                        android:paddingTop="8dp"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:id="@+id/doctor_specialization1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="General Practitioner"
+                        android:textColor="#03A9F4"/>
+
+                    <Button
+                        android:id="@+id/select_button1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Select"
+                        android:layout_marginTop="8dp"
+                        android:backgroundTint="@color/blue"
+                        android:textColor="@color/white"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- 2nd CardViews will be dynamically added here -->
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                android:background="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:background="@color/white">
+
+                    <ImageView
+                        android:id="@+id/doctor_image2"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/rushdy" />
+
+                    <TextView
+                        android:id="@+id/doctor_name2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dr. Rushdy James"
+                        android:textStyle="bold"
+                        android:paddingTop="8dp"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/doctor_specialization2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cardiologist"
+                        android:textColor="#03A9F4"/>
+
+                    <Button
+                        android:id="@+id/select_button2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Select"
+                        android:layout_marginTop="8dp"
+                        android:backgroundTint="@color/blue"
+                        android:textColor="@color/white"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- 3rd CardViews will be dynamically added here -->
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                android:background="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:background="@color/white">
+
+                    <ImageView
+                        android:id="@+id/doctor_image3"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/racheal" />
+
+                    <TextView
+                        android:id="@+id/doctor_name3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dr. Modong Rachael"
+                        android:textStyle="bold"
+                        android:paddingTop="8dp"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:id="@+id/doctor_specialization3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Orthopedic"
+                        android:textColor="#03A9F4"/>
+
+                    <Button
+                        android:id="@+id/select_button3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Select"
+                        android:layout_marginTop="8dp"
+                        android:backgroundTint="@color/blue"
+                        android:textColor="@color/white"
+                        />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- 4th CardViews will be dynamically added here -->
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                android:background="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:background="@color/white">
+
+                    <ImageView
+                        android:id="@+id/doctor_image4"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/bridget" />
+
+                    <TextView
+                        android:id="@+id/doctor_name4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dr. Arinda Bridget"
+                        android:textStyle="bold"
+                        android:paddingTop="8dp"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:id="@+id/doctor_specialization4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ENT"
+                        android:textColor="#03A9F4"/>
+
+                    <Button
+                        android:id="@+id/select_button4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Select"
+                        android:layout_marginTop="8dp"
+                        android:backgroundTint="@color/blue"
+                        android:textColor="@color/white"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- 5th CardViews will be dynamically added here -->
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                android:background="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:background="@color/white">
+
+                    <ImageView
+                        android:id="@+id/doctor_image5"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/manasse" />
+
+                    <TextView
+                        android:id="@+id/doctor_name5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dr. Manasse William"
+                        android:textStyle="bold"
+                        android:paddingTop="8dp"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:id="@+id/doctor_specialization5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Psychiatrist"
+                        android:textColor="#03A9F4"/>
+
+                    <Button
+                        android:id="@+id/select_button5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Select"
+                        android:layout_marginTop="8dp"
+                        android:backgroundTint="@color/blue"
+                        android:textColor="@color/white"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+
+        </LinearLayout>
+    </HorizontalScrollView>
 
 
 

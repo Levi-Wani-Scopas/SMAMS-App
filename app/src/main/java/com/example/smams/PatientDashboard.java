@@ -71,7 +71,7 @@ public class PatientDashboard extends AppCompatActivity {
                 if (item.getItemId() == R.id.nav_dashboard) {
                     selectedFragment = new PatientDashboardFragment();
                 } else if (item.getItemId() == R.id.nav_doctors) {
-                    selectedFragment = new PatientDoctorFragment();
+                    selectedFragment = new PatientSelectedDoctorFragment();
                 } else if (item.getItemId() == R.id.nav_schedule) {
                     selectedFragment = new PatientScheduleFragment();
                 } else if (item.getItemId() == R.id.nav_account) {
