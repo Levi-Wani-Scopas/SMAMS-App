@@ -22,7 +22,7 @@
             android:paddingBottom="0dp"
             app:titleMarginStart="98dp"
             android:title="SMAMS"
-            android:titleTextColor="@color/black"/>
+            android:titleTextColor="@color/white"/>
 
 
 
@@ -33,7 +33,6 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"/>
-
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation"
@@ -48,7 +47,9 @@
             app:menu="@menu/bottom"
             android:elevation="10dp"/>
 
+
     </LinearLayout>
+
 
     <!-- Navigation View (Drawer) -->
     <com.google.android.material.navigation.NavigationView

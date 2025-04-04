@@ -45,7 +45,10 @@ public class AppointmentFormActivity extends AppCompatActivity {
         }
 
         // Initialize Firebase Database
-        databaseReference = FirebaseDatabase.getInstance().getReference("Appointments");
+        String userId = "User_ID";
+        databaseReference = FirebaseDatabase.getInstance().getReference("Patients")
+                .child(userId)
+                .child("Appointments");
 
         // Get doctor's name from intent
         selectedDoctorName = getIntent().getStringExtra("doctor_name");
@@ -116,6 +119,7 @@ public class AppointmentFormActivity extends AppCompatActivity {
         }, hour, minute, false); // `false` forces 12-hour format
         timePickerDialog.show();
     }
+
     // Submit Appointment to Firebase
     private void submitAppointment() {
         String patientName = patientNameInput.getText().toString().trim();
@@ -147,6 +151,8 @@ public class AppointmentFormActivity extends AppCompatActivity {
         appointmentData.put("reason", reason);
         appointmentData.put("nextOfKinName", nextOfKinName);
         appointmentData.put("nextOfKinPhone", nextOfKinPhone);
+        appointmentData.put("status", "Pending"); // Default status
+
 
         // Save to Firebase
         if (appointmentId != null) {

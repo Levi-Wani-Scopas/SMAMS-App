@@ -85,7 +85,8 @@
             android:layout_marginTop="20dp"
             android:paddingTop="8dp"
             android:textSize="15sp"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            />
 
         <TextView
             android:id="@+id/doctor_working_hours"

@@ -14,6 +14,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class AuthenticationActivity extends AppCompatActivity implements NetworkChangeReceiver.NetworkChangeListener {
 
@@ -141,6 +142,15 @@ public class AuthenticationActivity extends AppCompatActivity implements Network
             showEnableInternetDialog();
         } else {
             isInternetConnected = true;
+        }
+    }
+
+    protected void onStart() {
+        super.onStart();
+        if (FirebaseAuth.getInstance().getCurrentUser() != null) {
+            // User is already logged in, go to MainActivity
+            startActivity(new Intent(AuthenticationActivity.this, PatientDashboard.class));
+            finish(); // Prevent user from going back to login screen
         }
     }
 }
