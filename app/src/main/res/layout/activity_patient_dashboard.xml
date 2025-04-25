@@ -22,9 +22,20 @@
             android:paddingBottom="0dp"
             app:titleMarginStart="98dp"
             android:title="SMAMS"
-            android:titleTextColor="@color/white"/>
+            android:titleTextColor="@color/white">
 
+        <ImageButton
+            android:id="@+id/notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginRight="20dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_notifications"
+            android:contentDescription="Notification"
+            />
 
+        </androidx.appcompat.widget.Toolbar>
 
 
         <!-- Main UI Content -->

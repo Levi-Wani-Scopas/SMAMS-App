@@ -20,7 +20,9 @@ public class Appointment {
     public Appointment(String appointmentId, String appointmentDate, String appointmentTime,
                        String doctorName, String email, String nextOfKinName,
                        String nextOfKinPhone, String patientName, String phoneNumber,
-                       String reason, String status) {
+                       String reason, String status)
+    {
+
         this.appointmentId = appointmentId;
         this.appointmentDate = appointmentDate;
         this.appointmentTime = appointmentTime;

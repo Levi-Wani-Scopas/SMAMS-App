@@ -1,0 +1,52 @@
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:padding="8dp">
+
+
+<!-- Title -->
+<TextView
+    android:id="@+id/title_appointments_doctors"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Incoming Appointments"
+    android:textColor="@color/blue"
+    android:textSize="20sp"
+    android:textStyle="bold"
+    android:paddingBottom="8dp" />
+
+    <TextView
+        android:id="@+id/title_doctors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ensure to select an appointment basing on the mentioned doctor."
+        android:textColor="@color/blue"
+        android:textSize="13sp"
+        android:textStyle="italic"
+        android:paddingBottom="8dp"
+        android:paddingLeft="10dp"
+        android:layout_marginTop="10dp"/>
+
+
+
+    <TextView
+    android:id="@+id/no_appointments_text"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="No appointments found."
+    android:textSize="16sp"
+    android:textColor="@android:color/darker_gray"
+    android:visibility="gone"
+    android:gravity="center"
+    android:layout_gravity="center" />
+
+
+
+
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/recycler_doctor_appointments"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+</LinearLayout>

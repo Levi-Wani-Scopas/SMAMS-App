@@ -145,12 +145,4 @@ public class AuthenticationActivity extends AppCompatActivity implements Network
         }
     }
 
-    protected void onStart() {
-        super.onStart();
-        if (FirebaseAuth.getInstance().getCurrentUser() != null) {
-            // User is already logged in, go to MainActivity
-            startActivity(new Intent(AuthenticationActivity.this, PatientDashboard.class));
-            finish(); // Prevent user from going back to login screen
-        }
-    }
 }

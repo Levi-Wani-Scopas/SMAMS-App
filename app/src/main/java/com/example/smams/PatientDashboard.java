@@ -1,10 +1,12 @@
 package com.example.smams;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -31,6 +33,7 @@ public class PatientDashboard extends AppCompatActivity {
     private NavigationView navigationView;
     private Toolbar toolbar;
     private BottomNavigationView bottomNavigationView;
+    private ImageView imgNotify;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +46,10 @@ public class PatientDashboard extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         bottomNavigationView = findViewById(R.id.bottom_navigation);
+        imgNotify = findViewById(R.id.notification);
 
 
+        imgNotify.setOnClickListener(view -> startActivity(new Intent(PatientDashboard.this, AppointmentNotificationActivity.class)));
 
 
         // Setup Navigation Drawer Toggle
