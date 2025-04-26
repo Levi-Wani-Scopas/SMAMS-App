@@ -17,6 +17,12 @@
         android:theme="@style/Theme.SMAMS"
         tools:targetApi="31">
         <activity
+            android:name=".SelectedAppointmentsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DrugsAcivity"
+            android:exported="false" />
+        <activity
             android:name=".AppointmentNotificationActivity"
             android:exported="false" />
         <activity

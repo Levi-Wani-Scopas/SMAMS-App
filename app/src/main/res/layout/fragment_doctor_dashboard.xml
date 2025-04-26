@@ -68,12 +68,12 @@
 
     <!-- CardView Below Toolbar -->
     <androidx.cardview.widget.CardView
-        android:id="@+id/myappointment"
+        android:id="@+id/myAppointmentCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:background="@color/white"
         android:elevation="8dp"
         app:cardCornerRadius="12dp"
@@ -109,6 +109,174 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
+
+    <GridLayout
+        android:id="@+id/grid"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginLeft="6dp"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
+        android:columnCount="2"
+        android:rowCount="3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myAppointmentCard">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/drugsCard"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:backgroundTint="@color/white"
+            android:paddingTop="5dp"
+            app:cardCornerRadius="12dp"
+            android:elevation="8dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+
+                <TextView
+                    android:id="@+id/drugs"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="7dp"
+                    android:gravity="bottom|center"
+                    android:text="Drugs / Conditions "
+                    android:textColor="@color/blue"
+                    android:textSize="15dp"
+                    android:textStyle="normal" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/DosageTrack"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"
+            android:backgroundTint="@color/blue"
+            app:cardCornerRadius="12dp"
+            android:elevation="8dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <TextView
+                    android:id="@+id/dosageTrack"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="7dp"
+                    android:gravity="bottom|center"
+                    android:text="Reminder"
+                    android:textColor="@color/white"
+                    android:textSize="15dp"
+                    android:textStyle="normal" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+    </GridLayout>
+
+
+    <!-- CardView Below Toolbar -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/videoConference"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/white"
+        android:elevation="8dp"
+        app:cardCornerRadius="12dp"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintTop_toBottomOf="@id/grid">
+
+        <!-- CardView Content 1 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/blue"
+            android:orientation="horizontal">
+
+            <!-- ImageView -->
+            <ImageView
+                android:id="@+id/myConferenceImg"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="15dp"
+                android:src="@drawable/videoconference" />
+
+            <!-- TextView -->
+            <TextView
+                android:id="@+id/myConferencecard_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="Video Conference"
+                android:textColor="@color/white"
+                android:textSize="17sp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Report -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/report"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/white"
+        android:elevation="8dp"
+        app:cardCornerRadius="12dp"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintTop_toBottomOf="@id/videoConference">
+
+        <!-- CardView Content Report -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/blue"
+            android:orientation="horizontal">
+
+            <!-- ImageView -->
+            <ImageView
+                android:id="@+id/myReportImg"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="15dp"
+                android:src="@drawable/report2" />
+
+            <!-- TextView -->
+            <TextView
+                android:id="@+id/myReportcard_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="Medical Report"
+                android:textColor="@color/white"
+                android:textSize="17sp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 
 

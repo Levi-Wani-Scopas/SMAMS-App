@@ -86,7 +86,7 @@ public class DisplayRemindersActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(DisplayRemindersActivity.this, "Failed to fetch reminders", Toast.LENGTH_SHORT).show();
+
             }
         });
     }

@@ -11,12 +11,14 @@ public class DoctorAppointment {
     private String nextOfKinName;
     private String nextOfKinPhone;
     private String status;
+    private boolean selected;
+
 
     public DoctorAppointment() {
         // Default constructor required for Firebase
     }
 
-    public DoctorAppointment(String patientName, String doctorName, String email, String phoneNumber, String appointmentDate, String appointmentTime, String reason, String nextOfKinName, String nextOfKinPhone, String status) {
+    public DoctorAppointment(String patientName, String doctorName, String email, String phoneNumber, String appointmentDate, String appointmentTime, String reason, String nextOfKinName, String nextOfKinPhone, String status, boolean selected) {
         this.patientName = patientName;
         this.doctorName = doctorName;
         this.email = email;
@@ -27,6 +29,9 @@ public class DoctorAppointment {
         this.nextOfKinName = nextOfKinName;
         this.nextOfKinPhone = nextOfKinPhone;
         this.status = status;
+        this.selected = selected;
+
+
     }
 
     // Getters and Setters
@@ -59,4 +64,8 @@ public class DoctorAppointment {
 
     public String getStatus() { return status; }
     public void setStatus(String status) { this.status = status; }
+
+    public boolean isSelected() { return selected; }
+    public void setSelected(boolean selected) { this.selected = selected; }
+
 }

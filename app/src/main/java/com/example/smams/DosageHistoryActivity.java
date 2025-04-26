@@ -50,7 +50,8 @@ public class DosageHistoryActivity extends AppCompatActivity {
     }
 
     private void fetchDosageHistory() {
-        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Patients")
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance()
+                .getReference("Patients")
                 .child("User_ID") // Replace with actual user ID
                 .child("Reminders");
 

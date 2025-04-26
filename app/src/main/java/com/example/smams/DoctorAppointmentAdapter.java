@@ -1,6 +1,7 @@
 package com.example.smams;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +12,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class DoctorAppointmentAdapter extends RecyclerView.Adapter<DoctorAppointmentAdapter.ViewHolder> {
 
@@ -42,8 +45,31 @@ public class DoctorAppointmentAdapter extends RecyclerView.Adapter<DoctorAppoint
         holder.textKin.setText("Next of Kin: " + appointment.getNextOfKinName() + " | Phone: " + appointment.getNextOfKinPhone());
         holder.textStatus.setText("Status: " + appointment.getStatus());
 
-        // You can add functionality to the tick button here
         holder.tickButton.setOnClickListener(v -> {
+            DoctorAppointment selectedAppointment = appointmentList.get(holder.getAdapterPosition());
+
+            SharedPreferences sharedPreferences = context.getSharedPreferences("SelectedAppointments", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+
+            String appointmentString = selectedAppointment.getPatientName() + "||" +
+                    selectedAppointment.getDoctorName() + "||" +
+                    selectedAppointment.getAppointmentDate() + "||" +
+                    selectedAppointment.getAppointmentTime() + "||" +
+                    selectedAppointment.getReason() + "||" +
+                    selectedAppointment.getEmail() + "||" +
+                    selectedAppointment.getPhoneNumber() + "||" +
+                    selectedAppointment.getNextOfKinName() + "||" +
+                    selectedAppointment.getNextOfKinPhone() + "||" +
+                    selectedAppointment.getStatus();
+
+            Set<String> appointmentSet = sharedPreferences.getStringSet("appointments", new HashSet<>());
+
+            Set<String> updatedSet = new HashSet<>(appointmentSet);
+            updatedSet.add(appointmentString);
+
+            editor.putStringSet("appointments", updatedSet);
+            editor.apply();
+
             Toast.makeText(context, "Appointment Selected", Toast.LENGTH_SHORT).show();
         });
     }
@@ -70,4 +96,3 @@ public class DoctorAppointmentAdapter extends RecyclerView.Adapter<DoctorAppoint
         }
     }
 }
-

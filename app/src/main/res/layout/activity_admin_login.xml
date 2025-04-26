@@ -141,11 +141,22 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <!-- Signup Link -->
+    <TextView
+        android:id="@+id/AdminSignup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Don't have an account? Signup"
+        android:textSize="17sp"
+        android:textColor="#2196F3"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp" />
+
     <!-- Social Login Icons -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="or login with"
+        android:text="  Visit us on"
         android:textSize="14sp"
         android:textColor="@color/black"
         android:layout_gravity="center_horizontal"
@@ -182,15 +193,6 @@
             android:layout_marginStart="20dp" />
     </LinearLayout>
 
-    <!-- Signup Link -->
-    <TextView
-        android:id="@+id/AdminSignup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Don't have an account? Signup"
-        android:textSize="17sp"
-        android:textColor="#2196F3"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp" />
+
 
 </LinearLayout>
