@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/text_appointment_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Appointment Details"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:padding="10dp" />
+
+
+
+    <Button
+        android:id="@+id/button_confirmation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send Confirmation"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/blue"
+        android:layout_marginTop="20dp"/>
+</LinearLayout>

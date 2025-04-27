@@ -17,13 +17,22 @@
         android:theme="@style/Theme.SMAMS"
         tools:targetApi="31">
         <activity
+            android:name=".StartVideoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DoctorVideoConferenceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ConfirmAppointmentActivity"
+            android:exported="false" />
+        <activity
             android:name=".SelectedAppointmentsActivity"
             android:exported="false" />
         <activity
             android:name=".DrugsAcivity"
             android:exported="false" />
         <activity
-            android:name=".AppointmentNotificationActivity"
+            android:name=".PatientVideoConferenceActivity"
             android:exported="false" />
         <activity
             android:name=".CancelAppointmentRequestActivity"

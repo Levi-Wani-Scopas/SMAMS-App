@@ -112,7 +112,7 @@
 
     <GridLayout
         android:id="@+id/grid"
-        android:layout_width="0dp"
+        android:layout_width="190dp"
         android:layout_height="100dp"
         android:layout_marginTop="15dp"
         android:layout_marginRight="6dp"
@@ -121,8 +121,8 @@
         android:paddingRight="6dp"
         android:columnCount="2"
         android:rowCount="3"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+
         app:layout_constraintTop_toBottomOf="@+id/myAppointmentCard">
 
 
@@ -133,7 +133,7 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_margin="5dp"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@color/blue"
             android:paddingTop="5dp"
             app:cardCornerRadius="12dp"
             android:elevation="8dp">
@@ -143,7 +143,6 @@
                 android:layout_height="match_parent">
 
 
-
                 <TextView
                     android:id="@+id/drugs"
                     android:layout_width="match_parent"
@@ -151,43 +150,14 @@
                     android:layout_marginBottom="7dp"
                     android:gravity="bottom|center"
                     android:text="Drugs / Conditions "
-                    android:textColor="@color/blue"
-                    android:textSize="15dp"
-                    android:textStyle="normal" />
-
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
-
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/DosageTrack"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="5dp"
-            android:backgroundTint="@color/blue"
-            app:cardCornerRadius="12dp"
-            android:elevation="8dp">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-
-                <TextView
-                    android:id="@+id/dosageTrack"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="7dp"
-                    android:gravity="bottom|center"
-                    android:text="Reminder"
                     android:textColor="@color/white"
                     android:textSize="15dp"
                     android:textStyle="normal" />
 
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
+
+
 
     </GridLayout>
 

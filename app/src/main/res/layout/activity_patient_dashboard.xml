@@ -31,7 +31,7 @@
             android:layout_gravity="end"
             android:layout_marginRight="20dp"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/ic_notifications"
+            android:src="@drawable/videocam1"
             android:contentDescription="Notification"
             />
 
