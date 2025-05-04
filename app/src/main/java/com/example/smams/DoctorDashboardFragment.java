@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 
 public class DoctorDashboardFragment extends Fragment {
 
-    CardView DrugsCard, AppointmentCard, VideoConferenceCard;
+    CardView DrugsCard, AppointmentCard, VideoConferenceCard, MyPatientsCard, MedicalReportCard;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -22,12 +22,22 @@ public class DoctorDashboardFragment extends Fragment {
         DrugsCard = view.findViewById(R.id.drugsCard);
         AppointmentCard = view.findViewById(R.id.myAppointmentCard);
         VideoConferenceCard =  view.findViewById(R.id.videoConference);
+        MyPatientsCard =  view.findViewById(R.id.mypatient);
+        MedicalReportCard = view.findViewById(R.id.report);
 
         // Set Click Listener
         DrugsCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), DrugsAcivity.class);
+                startActivity(intent);
+            }
+        });
+
+        MyPatientsCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), MyPatientsActivity.class);
                 startActivity(intent);
             }
         });
@@ -43,6 +53,13 @@ public class DoctorDashboardFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), DoctorVideoConferenceActivity.class);
+                startActivity(intent);
+            }
+        });
+        MedicalReportCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), MedicalReportActivity.class);
                 startActivity(intent);
             }
         });

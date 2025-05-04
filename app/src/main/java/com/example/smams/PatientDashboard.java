@@ -1,10 +1,12 @@
 package com.example.smams;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -33,6 +35,10 @@ public class PatientDashboard extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_patient_dashboard);
 
+        // Save user session
+        SharedPreferences prefs = getSharedPreferences("userPrefs", MODE_PRIVATE);
+        prefs.edit().putString("userType", "patient").apply();
+
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
         toolbar = findViewById(R.id.toolbar);
@@ -41,7 +47,7 @@ public class PatientDashboard extends AppCompatActivity {
         imgNotify = findViewById(R.id.notification);
 
 
-        imgNotify.setOnClickListener(view -> startActivity(new Intent(PatientDashboard.this, PatientVideoConferenceActivity.class)));
+        imgNotify.setOnClickListener(view -> startActivity(new Intent(PatientDashboard.this, PatientVideoConferencingActivity.class)));
 
 
         // Setup Navigation Drawer Toggle
@@ -88,24 +94,23 @@ public class PatientDashboard extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
-/*
-                if (id == R.id.nav_home) {
-                    startActivity(new Intent(MainActivity.this, ProfileActivity.class));
-                } else if (id == R.id.nav_profile) {
-                    startActivity(new Intent(MainActivity.this, MainActivity.class));
-                } else if (id == R.id.nav_language) {
-                    startActivity(new Intent(MainActivity.this, MainActivity.class));
-                } else if (id == R.id.nav_settings) {
-                    startActivity(new Intent(MainActivity.this, MainActivity.class));
-                } else if (id == R.id.nav_share) {
-                    Toast.makeText(MainActivity.this, "Sharing...", Toast.LENGTH_SHORT).show();
-                }else if (id == R.id.nav_logout) {
-                    FirebaseAuth.getInstance().signOut(); // Firebase logout
-                    Toast.makeText(MainActivity.this, "Logged out successfully", Toast.LENGTH_SHORT).show();
 
-
+                if (id == R.id.nav_settings) {
+                    startActivity(new Intent(PatientDashboard.this, SettingsActivity.class));
+                } else if (id == R.id.nav_terms_and_conditions) {
+                    startActivity(new Intent(PatientDashboard.this, TermsAndConditionsActivity.class));
+                } else if (id == R.id.nav_privacy) {
+                    startActivity(new Intent(PatientDashboard.this, PrivacyActivity.class));
+                } else if (id == R.id.nav_cookies) {
+                    startActivity(new Intent(PatientDashboard.this, CookiesActivity.class));
+                } else if (id == R.id.nav_help) {
+                    startActivity(new Intent(PatientDashboard.this, HelpActivity.class));
+                }else if (id == R.id.nav_aboutUs) {
+                    startActivity(new Intent(PatientDashboard.this, AboutUsActivity.class));
+                } else if (id == R.id.nav_SMAMS) {
+                    Toast.makeText(PatientDashboard.this, "Smart Medication Adherence Monitoring System", Toast.LENGTH_SHORT).show();
                 }
-*/
+
                 // Close the drawer after selecting an item
                 drawerLayout.closeDrawer(GravityCompat.START);
                 return true;

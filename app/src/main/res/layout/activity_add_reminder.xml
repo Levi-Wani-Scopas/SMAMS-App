@@ -19,8 +19,8 @@
             android:layout_gravity="center"
             android:text="Medicine Reminder"
             android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="18sp" />
+            android:textStyle="normal"
+            android:textSize="22sp" />
 
         <!-- Exit Button -->
         <ImageButton

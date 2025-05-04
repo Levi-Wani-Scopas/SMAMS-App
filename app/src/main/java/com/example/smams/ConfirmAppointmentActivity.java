@@ -3,12 +3,14 @@ package com.example.smams;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 public class ConfirmAppointmentActivity extends AppCompatActivity {
 
@@ -21,6 +23,13 @@ public class ConfirmAppointmentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirm_appointment);
+
+        // Set up the Toolbar
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); // Show back button
+        getSupportActionBar().setTitle("             Confirmation");
+
 
         textViewAppointmentDetails = findViewById(R.id.text_appointment_detail);
         buttonSendConfirmation = findViewById(R.id.button_confirmation);
@@ -75,5 +84,13 @@ public class ConfirmAppointmentActivity extends AppCompatActivity {
         } catch (Exception e) {
             Toast.makeText(this, "No email client found!", Toast.LENGTH_SHORT).show();
         }
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish(); // Go back when toolbar back button is pressed
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

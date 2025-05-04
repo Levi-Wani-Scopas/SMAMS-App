@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/white"
-    android:padding="16dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/blue"
+        app:titleTextColor="@android:color/white"/>
 
     <TextView
         android:id="@+id/text_appointment_detail"
@@ -13,6 +21,7 @@
         android:text="Appointment Details"
         android:textColor="@color/black"
         android:textSize="18sp"
+        android:layout_margin="10dp"
         android:padding="10dp" />
 
 
@@ -24,5 +33,5 @@
         android:text="Send Confirmation"
         android:textColor="@color/white"
         android:backgroundTint="@color/blue"
-        android:layout_marginTop="20dp"/>
+        android:layout_margin="20dp"/>
 </LinearLayout>

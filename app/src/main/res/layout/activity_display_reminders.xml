@@ -13,32 +13,9 @@
         android:layout_height="wrap_content"
         android:background="@color/blue"
         android:elevation="4dp"
-        android:padding="8dp">
-
-        <!-- Exit button -->
-        <ImageView
-            android:id="@+id/btn_exit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/arrow_back_white"
-        android:contentDescription="exit_button"
-        android:layout_gravity="start"
-        android:padding="8dp" />
+        android:padding="8dp"/>
 
 
-        <!-- Title -->
-        <TextView
-            android:id="@+id/tv_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Saved Reminders"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:fontFamily="sans-serif-medium" />
-
-
-    </androidx.appcompat.widget.Toolbar>
 
     <Button
         android:id="@+id/btn_clear_all"
