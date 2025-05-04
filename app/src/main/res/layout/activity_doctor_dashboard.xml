@@ -24,16 +24,7 @@
             android:title="SMAMS"
             android:titleTextColor="@color/white">
 
-        <ImageButton
-            android:id="@+id/btn_send"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginRight="20dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/send_24"
-            android:contentDescription="Send"
-            />
+
         </androidx.appcompat.widget.Toolbar>
 
 

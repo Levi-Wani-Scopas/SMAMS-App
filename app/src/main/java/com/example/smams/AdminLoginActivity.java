@@ -1,6 +1,7 @@
 package com.example.smams;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -26,7 +27,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class AdminLoginActivity extends AppCompatActivity {
 
-    private ImageView returnBack;
+    private ImageView returnBack, adminFacebook, adminGoogle, adminX;
     private EditText emailEditText, passwordEditText;
     private Button loginButton;
     private FirebaseAuth mAuth;
@@ -43,6 +44,10 @@ public class AdminLoginActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference("Admin");
 
+
+        adminFacebook = findViewById(R.id.AdminFacebookLogo);
+        adminGoogle = findViewById(R.id.AdminGoogleLogo);
+        adminX = findViewById(R.id.AdminxLogo);
         returnBack = findViewById(R.id.AdminBack);
         emailEditText = findViewById(R.id.AdminUsername);
         passwordEditText = findViewById(R.id.AdminPassword);
@@ -62,7 +67,33 @@ public class AdminLoginActivity extends AppCompatActivity {
             Intent intent = new Intent(AdminLoginActivity.this, ResetPasswordActivity.class);
             startActivity(intent);
         });
+
+        adminFacebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/login/"));
+                startActivity(intent);
+            }
+        });
+        adminGoogle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/"));
+                startActivity(intent);
+            }
+        });
+        adminX.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://x.com/?lang=en"));
+                startActivity(intent);
+            }
+        });
+
+
+
     }
+
 
     private void loginAdmin() {
         String email = emailEditText.getText().toString().trim();

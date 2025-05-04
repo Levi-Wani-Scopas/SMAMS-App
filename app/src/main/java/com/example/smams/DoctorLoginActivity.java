@@ -2,6 +2,7 @@ package com.example.smams;
 
 import android.content.Intent;
 import android.media.Image;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -27,7 +28,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class DoctorLoginActivity extends AppCompatActivity {
 
-    private ImageView returnBack;
+    private ImageView returnBack, doctorFacebook, doctorGoogle, doctorX;
     private EditText emailEditText, passwordEditText;
     private Button loginButton;
     private FirebaseAuth mAuth;
@@ -45,6 +46,9 @@ public class DoctorLoginActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference("Doctors");
 
+        doctorFacebook = findViewById(R.id.DoctorFacebookLogo);
+        doctorGoogle = findViewById(R.id.DoctorGoogleLogo);
+        doctorX = findViewById(R.id.DoctorxLogo);
         returnBack = findViewById(R.id.DoctorBack);
         emailEditText = findViewById(R.id.DoctorUsername);
         passwordEditText = findViewById(R.id.DoctorPassword);
@@ -63,6 +67,28 @@ public class DoctorLoginActivity extends AppCompatActivity {
         forgotPassword.setOnClickListener(view -> {
             Intent intent = new Intent(DoctorLoginActivity.this, ResetPasswordActivity.class);
             startActivity(intent);
+        });
+
+        doctorFacebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/login/"));
+                startActivity(intent);
+            }
+        });
+        doctorGoogle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/"));
+                startActivity(intent);
+            }
+        });
+        doctorX.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://x.com/?lang=en"));
+                startActivity(intent);
+            }
         });
     }
         private void loginDoctor() {

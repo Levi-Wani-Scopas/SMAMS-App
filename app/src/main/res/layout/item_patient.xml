@@ -1,0 +1,129 @@
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:elevation="8dp"
+    android:background="#0AFFFFFF">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E1EEFA">
+
+        <ImageView
+            android:id="@+id/image_patient_profile"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_profile_placeholder"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="12dp"
+            />
+
+        <TextView
+            android:id="@+id/text_patient_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Patient Name"
+            android:textColor="@color/blue"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/text_patient_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Patient Email"
+            android:textColor="@color/black"
+            android:layout_margin="3dp"
+            android:layout_gravity="center"/>
+
+
+        <TextView
+            android:id="@+id/text_patient_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Phone Number"
+            android:textColor="@color/black"
+            android:layout_margin="2dp"/>
+
+        <TextView
+            android:id="@+id/text_nextOfKin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next of Kin:"
+            android:layout_gravity="center"
+            android:textColor="@color/blue"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_margin="5dp"/>
+
+        <TextView
+            android:id="@+id/text_next_of_kin_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next of Kin Name"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:layout_margin="2dp"/>
+
+        <TextView
+            android:id="@+id/text_next_of_kin_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next of Kin Phone Number"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:layout_margin="2dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp">
+
+        <Button
+            android:id="@+id/button_dosage_track"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Progress"
+            android:layout_gravity="start"
+            android:textColor="@color/white"
+            android:layout_marginLeft="10dp"
+            android:backgroundTint="@color/blue"
+            android:layout_marginTop="12dp"/>
+
+            <Button
+                android:id="@+id/Track"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dose Track"
+                android:layout_gravity="start"
+                android:textColor="@color/white"
+                android:backgroundTint="#E750AEFA"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="5dp"/>
+
+            <Button
+                android:id="@+id/Records"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Records"
+                android:layout_gravity="end"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/blue"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="5dp"/>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

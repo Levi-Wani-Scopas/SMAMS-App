@@ -85,6 +85,7 @@ public class PatientAccountFragment extends Fragment {
         editName.setEnabled(enable);
         editPhone.setEnabled(enable);
         editBloodGroup.setEnabled(enable);
+        editEmail.setEnabled(enable);
         editKinName.setEnabled(enable);
         editKinPhone.setEnabled(enable);
         genderGroup.setEnabled(enable);
@@ -100,7 +101,7 @@ public class PatientAccountFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
-                    editName.setText(snapshot.child("name").getValue(String.class));
+                    editName.setText(snapshot.child("fullName").getValue(String.class));
                     editEmail.setText(snapshot.child("email").getValue(String.class));
                     editPhone.setText(snapshot.child("phone").getValue(String.class));
                     editBloodGroup.setText(snapshot.child("bloodGroup").getValue(String.class));

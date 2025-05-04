@@ -50,7 +50,7 @@
         <EditText
             android:id="@+id/edit_email"
             style="@style/ProfileInput"
-            android:hint="Email"
+            android:hint="Enter Email"
             android:enabled="false"
             android:textColorHint="#A2898989"/>
 

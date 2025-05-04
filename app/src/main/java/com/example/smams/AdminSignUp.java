@@ -90,7 +90,7 @@ public class AdminSignUp extends AppCompatActivity {
                                     .addOnCompleteListener(dbTask -> {
                                         if (dbTask.isSuccessful()) {
                                             Toast.makeText(this, "Patient Registered Successfully!", Toast.LENGTH_SHORT).show();
-                                            startActivity(new Intent(this, PatientLoginActivity.class));
+                                            startActivity(new Intent(this, AdminLoginActivity.class));
                                             finish();
                                         } else {
                                             Toast.makeText(this, "Database Error", Toast.LENGTH_SHORT).show();

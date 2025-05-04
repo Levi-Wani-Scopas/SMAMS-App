@@ -46,6 +46,8 @@ public class AppointmentAdapter extends RecyclerView.Adapter<AppointmentAdapter.
 
         holder.doctorNameText.setText(appointment.getDoctorName());
         holder.appointmentStatusText.setText("Status: " + appointment.getStatus());
+        holder.patientNameText.setText("Patient: " + appointment.getPatientName());
+        holder.reasonText.setText("Appt Reason: " + appointment.getReason());
         holder.appointmentDatetimeText.setText("Date: " + appointment.getAppointmentDate() + " | Time: " + appointment.getAppointmentTime());
 
         holder.viewDetailsButton.setOnClickListener(v -> {
@@ -58,6 +60,8 @@ public class AppointmentAdapter extends RecyclerView.Adapter<AppointmentAdapter.
             Intent intent = new Intent(context, CancelAppointmentRequestActivity.class);
             intent.putExtra("appointmentId", appointment.getAppointmentId());
             intent.putExtra("doctorName", appointment.getDoctorName());
+            intent.putExtra("reason", appointment.getReason());
+            intent.putExtra("patientName", appointment.getPatientName());
             intent.putExtra("appointmentDate", appointment.getAppointmentDate());
             intent.putExtra("appointmentTime", appointment.getAppointmentTime());
 
@@ -73,7 +77,7 @@ public class AppointmentAdapter extends RecyclerView.Adapter<AppointmentAdapter.
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView doctorNameText, appointmentStatusText, appointmentDatetimeText;
+        TextView doctorNameText, appointmentStatusText, appointmentDatetimeText, patientNameText, reasonText;
         Button viewDetailsButton, cancelAppointmentButton;
 
         public ViewHolder(@NonNull View itemView) {
@@ -81,8 +85,10 @@ public class AppointmentAdapter extends RecyclerView.Adapter<AppointmentAdapter.
             doctorNameText = itemView.findViewById(R.id.doctor_name_text);
             appointmentStatusText = itemView.findViewById(R.id.appointment_status_text);
             appointmentDatetimeText = itemView.findViewById(R.id.appointment_datetime_text);
+            reasonText = itemView.findViewById(R.id.appointment_reason_text);
             viewDetailsButton = itemView.findViewById(R.id.view_details_button);
             cancelAppointmentButton = itemView.findViewById(R.id.cancel_appointment_button);
+            patientNameText = itemView.findViewById(R.id.patient_name_text);
         }
     }
 }

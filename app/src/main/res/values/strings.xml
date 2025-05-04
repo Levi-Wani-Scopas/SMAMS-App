@@ -12,4 +12,11 @@
         <item>Monthly</item>
     </string-array>
 
+
+    <string-array name="account_types">
+        <item>Patient</item>
+        <item>Doctor</item>
+        <item>Admin</item>
+    </string-array>
+
 </resources>

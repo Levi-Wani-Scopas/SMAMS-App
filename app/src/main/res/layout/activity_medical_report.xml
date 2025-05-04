@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/blue"
+        app:titleTextColor="@android:color/white"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="16dp"
+        android:fillViewport="true">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/PatientName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Patient Name"
+            android:textColorHint="#6D6D6D"
+            android:textColor="@color/black"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/DoctorName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Doctor Name"
+            android:textColorHint="#6D6D6D"
+            android:textColor="@color/black"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/Diagnosis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Diagnosis"
+            android:inputType="textMultiLine"
+            android:textColorHint="#6D6D6D"
+            android:textColor="@color/black"
+            android:minLines="2" />
+
+        <EditText
+            android:id="@+id/Dosage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Prescribed Dosage"
+            android:textColorHint="#6D6D6D"
+            android:textColor="@color/black"
+            android:inputType="textMultiLine"
+            android:minLines="2" />
+
+        <EditText
+            android:id="@+id/NextReviewDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="#6D6D6D"
+            android:textColor="@color/black"
+            android:hint="Next Review Date (e.g. 15-05-2025)"
+            android:inputType="date" />
+
+        <EditText
+            android:id="@+id/AdditionalNotes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Additional Notes"
+            android:inputType="textMultiLine"
+            android:textColorHint="#6D6D6D"
+            android:textColor="@color/black"
+            android:minLines="3" />
+
+        <EditText
+            android:id="@+id/ReportDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/blue"
+            android:textColor="@color/blue"
+            android:hint="Date of Report"
+            android:inputType="date" />
+
+        <Button
+            android:id="@+id/btnGenerateReport"
+            android:layout_width="match_parent"
+            android:backgroundTint="@color/blue"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_marginTop="25dp"
+            android:text="Send Report via Email" />
+
+    </LinearLayout>
+</ScrollView>
+</LinearLayout>

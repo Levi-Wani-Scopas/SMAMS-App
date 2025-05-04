@@ -1,0 +1,71 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/blue"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        />
+
+    <!-- Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="0dp"
+        android:padding="15dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <!-- App Logo -->
+            <ImageView
+                android:id="@+id/Logo"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/heart"
+                android:contentDescription="App Logo"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/aboutTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="About Us"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginBottom="12dp" />
+
+            <!-- About Us Content -->
+            <TextView
+                android:id="@+id/aboutContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#444444"
+                android:textSize="16sp"
+                android:lineSpacingExtra="4dp"
+                android:text="Smart Medication Adherence Monitoring System (SMAMS) is a mobile application developed as a Final Year Project by a group of dedicated students from the International University of East Africa (IUEA). The application is designed to enhance medication adherence, improve patient-doctor communication, and simplify healthcare management using intuitive mobile technology.\n\nThis project was carried out by:\n\n• Levi Wani Scopas\n• Modong Rachael\n• Manasse William\n• Arinda Bridget\n• Rushdy James\n\nThe development of SMAMS was guided and supervised by Mr. Barnabas, whose mentorship and encouragement were invaluable throughout the project journey.\n\nWe would also like to express our sincere appreciation to our Mobile Programming lecturer, Mr. Kato Kenneth, for his support and dedication in teaching which laid the foundation for this successful development. We also give our appreciation to all our beloved lecturers for their support and guidance from the start of time at the university.\n\nThis application reflects our shared commitment to using technology to improve health and well-being in our communities." />
+
+            <!-- University Logo -->
+            <ImageView
+                android:id="@+id/universityLogo"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/iuea"
+                android:contentDescription="IUEA Logo"
+                android:layout_margin="15dp" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

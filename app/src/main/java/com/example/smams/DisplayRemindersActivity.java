@@ -3,12 +3,14 @@ package com.example.smams;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Display;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.firebase.database.DataSnapshot;
@@ -24,25 +26,28 @@ public class DisplayRemindersActivity extends AppCompatActivity {
 
     private RecyclerView rvReminders;
     private Button btnClearAll;
-    private ImageView backImg;
     private SavedReminderAdapter reminderAdapter;
     private List<Reminder> reminderList;
     private DatabaseReference databaseReference;
-    private TextView tvTitle;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_reminders);
 
+        // Set up the Toolbar
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); // Show back button
+        getSupportActionBar().setTitle("             Saved Reminders");
+
         // Initialize views
         rvReminders = findViewById(R.id.rv_reminders);
-        tvTitle = findViewById(R.id.tv_title);
         btnClearAll = findViewById(R.id.btn_clear_all);
-        backImg = findViewById(R.id.btn_exit);
 
 
-        backImg.setOnClickListener(view -> startActivity(new Intent(DisplayRemindersActivity.this, PatientDashboard.class)));
+
 
 
         // Set up RecyclerView
@@ -77,11 +82,6 @@ public class DisplayRemindersActivity extends AppCompatActivity {
                 }
                 reminderAdapter.notifyDataSetChanged();
 
-                if (reminderList.isEmpty()) {
-                    tvTitle.setText("No Reminders Found");
-                } else {
-                    tvTitle.setText("Saved Reminders");
-                }
             }
 
             @Override
@@ -113,5 +113,13 @@ public class DisplayRemindersActivity extends AppCompatActivity {
                 })
                 .create()
                 .show();
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish(); // Go back when toolbar back button is pressed
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

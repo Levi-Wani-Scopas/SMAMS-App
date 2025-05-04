@@ -3,12 +3,14 @@ package com.example.smams;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -22,7 +24,6 @@ public class DosageHistoryActivity extends AppCompatActivity {
 
     private RecyclerView rvDosageHistory;
     private TextView tvSummary;
-    private ImageView backImg;
     private DosageHistoryAdapter adapter;
     private List<DosageHistory> dosageHistoryList = new ArrayList<>();
 
@@ -32,14 +33,16 @@ public class DosageHistoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dosage_history);
 
+        // Set up the Toolbar
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); // Show back button
+        getSupportActionBar().setTitle("             Dosage Track");
+
         rvDosageHistory = findViewById(R.id.rv_dosage_history);
         tvSummary = findViewById(R.id.tv_summary);
-        backImg = findViewById(R.id.btn_exit);
 
 
-
-
-        backImg.setOnClickListener(view -> startActivity(new Intent(DosageHistoryActivity.this, PatientDashboard.class)));
 
 
         adapter = new DosageHistoryAdapter(dosageHistoryList);
@@ -92,5 +95,13 @@ public class DosageHistoryActivity extends AppCompatActivity {
                 Log.e("DosageHistoryActivity", "Error fetching data: " + error.getMessage());
             }
         });
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish(); // Go back when toolbar back button is pressed
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

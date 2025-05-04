@@ -135,6 +135,8 @@ public class AuthenticationActivity extends AppCompatActivity implements Network
                 .show();
     }
 
+
+
     private void checkInternetConnection() {
         if (!NetworkUtil.isInternetAvailable(this)) {
             isInternetConnected = false;

@@ -1,6 +1,7 @@
 package com.example.smams;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -29,7 +30,7 @@ import com.google.firebase.database.ValueEventListener;
 public class PatientLoginActivity extends AppCompatActivity {
 
 
-    private ImageView returnBack;
+    private ImageView returnBack, patientFacebook, patientGoogle, patientx;
     private EditText emailEditText, passwordEditText;
     private Button loginButton;
     private FirebaseAuth mAuth;
@@ -48,6 +49,9 @@ public class PatientLoginActivity extends AppCompatActivity {
         databaseReference = FirebaseDatabase.getInstance().getReference("Patients");
 
 
+        patientFacebook = findViewById(R.id.PatientFacebookLogo);
+        patientGoogle = findViewById(R.id.PatientGoogleLogo);
+        patientx = findViewById(R.id.PatientxLogo);
         returnBack = findViewById(R.id.PatientBack);
         emailEditText = findViewById(R.id.PatientUsername); 
         passwordEditText = findViewById(R.id.PatientPassword);
@@ -66,6 +70,28 @@ public class PatientLoginActivity extends AppCompatActivity {
             // Handle password reset
             Intent intent = new Intent(PatientLoginActivity.this, ResetPasswordActivity.class);
             startActivity(intent);
+        });
+
+        patientFacebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/login/"));
+                startActivity(intent);
+            }
+        });
+        patientGoogle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/"));
+                startActivity(intent);
+            }
+        });
+        patientx.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://x.com/?lang=en"));
+                startActivity(intent);
+            }
         });
 
     }

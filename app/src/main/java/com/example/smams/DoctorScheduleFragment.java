@@ -1,64 +1,140 @@
 package com.example.smams;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.CalendarView;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link DoctorScheduleFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.HashSet;
+
+
 public class DoctorScheduleFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private CalendarView calendarView;
+    private DatabaseReference databaseReference;
+    private FirebaseAuth auth;
+    private HashSet<String> bookedDates = new HashSet<>();
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private Button moodHappy, moodSmile, moodNeutral, moodSad, moodCry;
+    private TextView selectedDateText;
+    private EditText notepadInput;
+    private Button saveNotepad;
+
+    private String selectedDate; // Stores the currently selected date
 
     public DoctorScheduleFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment DoctorScheduleFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static DoctorScheduleFragment newInstance(String param1, String param2) {
-        DoctorScheduleFragment fragment = new DoctorScheduleFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_doctor_schedule, container, false);
+
+        // Initialize Views
+        calendarView = view.findViewById(R.id.calendar_view);
+        selectedDateText = view.findViewById(R.id.selected_date_text);
+        notepadInput = view.findViewById(R.id.notepad_input);
+        saveNotepad = view.findViewById(R.id.save_notepad);
+
+        auth = FirebaseAuth.getInstance();
+        loadBookedAppointments(); // Load booked dates from Firebase
+
+        // Handle date selection
+        calendarView.setOnDateChangeListener((view1, year, month, dayOfMonth) -> {
+            selectedDate = dayOfMonth + "/" + (month + 1) + "/" + year; // Month is 0-based
+            selectedDateText.setText("Selected Date: " + selectedDate);
+
+            if (bookedDates.contains(selectedDate)) {
+                Toast.makeText(getContext(), "You have an appointment on this date!", Toast.LENGTH_SHORT).show();
+            }
+
+            // Load saved mood and note for this date
+            loadNotepad();
+        });
+
+
+        // Save Notepad Button
+        saveNotepad.setOnClickListener(v -> saveNotepad());
+
+        return view;
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+    private void loadBookedAppointments() {
+        FirebaseUser user = auth.getCurrentUser();
+        if (user == null) return;
+
+        databaseReference = FirebaseDatabase.getInstance()
+                .getReference("Patients")
+                .child("User_ID")
+                .child("Appointments");
+
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                bookedDates.clear();
+                for (DataSnapshot data : snapshot.getChildren()) {
+                    String date = data.child("appointmentDate").getValue(String.class);
+                    if (date != null) {
+                        bookedDates.add(date); // Add date to HashSet
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(getContext(), "Failed to load appointments.", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+
+    // Save Notepad for Selected Date
+    private void saveNotepad() {
+        if (selectedDate == null) {
+            Toast.makeText(getContext(), "Please select a date first!", Toast.LENGTH_SHORT).show();
+            return;
         }
+
+        String note = notepadInput.getText().toString().trim();
+        if (note.isEmpty()) {
+            Toast.makeText(getContext(), "Note is empty!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        SharedPreferences prefs = getContext().getSharedPreferences("MiniNotepad", getContext().MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString(selectedDate, note);
+        editor.apply();
+
+        Toast.makeText(getContext(), "Note saved for " + selectedDate, Toast.LENGTH_SHORT).show();
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_doctor_schedule, container, false);
+    // Load Notepad for Selected Date
+    private void loadNotepad() {
+        SharedPreferences prefs = getContext().getSharedPreferences("MiniNotepad", getContext().MODE_PRIVATE);
+        String note = prefs.getString(selectedDate, "");
+
+        notepadInput.setText(note);
     }
 }
