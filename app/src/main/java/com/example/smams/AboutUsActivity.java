@@ -19,7 +19,7 @@ public class AboutUsActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); // Show back button
-        getSupportActionBar().setTitle("               About US");
+        getSupportActionBar().setTitle("                About US");
 
     }
     @Override
