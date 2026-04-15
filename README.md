@@ -33,7 +33,7 @@ You can download and test the app here:
 
 
 ## 👨‍💻 Author
-Levi Wani Scopas Robert
+### Levi Wani Scopas Robert
 
 ## 📄 License
 This project is for academic and demonstration purposes.
