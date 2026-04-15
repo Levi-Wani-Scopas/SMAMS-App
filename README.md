@@ -16,10 +16,6 @@ SMAMS is a mobile-based healthcare application designed to improve medication ad
 - Firebase Realtime Database
 - XML (UI Design)
 
-## 🧩 System Design
-- Use Case Diagram
-- Data Flow Diagram (DFD)
-- Entity Relationship Diagram (ERD)
 
 ## 📱 APK Download
 You can download and test the app here:  
