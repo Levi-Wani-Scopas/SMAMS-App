@@ -3,7 +3,6 @@
 ## 📌 Overview
 SMAMS is a mobile-based healthcare application designed to improve medication adherence by helping patients manage their prescriptions, receive reminders, and interact with healthcare providers.
 
-<br>
 
 ## 🚀 Features
 - Medication scheduling and reminders
@@ -12,7 +11,6 @@ SMAMS is a mobile-based healthcare application designed to improve medication ad
 - Role-based access (Patient, Doctor, Admin)
 - Real-time data handling using Firebase
   
-<br>
 
 ## 🛠️ Technologies Used
 - Java (Android)
@@ -20,13 +18,11 @@ SMAMS is a mobile-based healthcare application designed to improve medication ad
 - Firebase Realtime Database
 - XML (UI Design)
 
-<br>
 
 ## 📱 APK Download
 You can download and test the app here:  
 [Download APK](https://github.com/Levi-Wani-Scopas/SMAMS-App/releases/download/v1.0/SMAMS-v1.0.apk)  
 
-<br>
 
 ## 📂 Project Structure
 - app
@@ -34,7 +30,7 @@ You can download and test the app here:
 - adapters
 - models
 
-<br>
+
 
 ## 👨‍💻 Author
 Levi Wani Scopas Robert
