@@ -19,7 +19,7 @@ SMAMS is a mobile-based healthcare application designed to improve medication ad
 
 ## 📱 APK Download
 You can download and test the app here:  
-[Download APK](#)  ← (we will replace this after upload)
+[[Download APK](https://github.com/Levi-Wani-Scopas/SMAMS-App/releases/download/v1.0/SMAMS-v1.0.apk)](#)  
 
 ## 📂 Project Structure
 - app/
