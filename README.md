@@ -31,10 +31,28 @@ You can download and test the app here:
 - models
 
 
-
 ## 👨‍💻 Author
 Levi Wani Scopas Robert
 
 
 ## 📄 License
 #### This project is for academic and demonstration purposes.
+
+
+## 📸 Screenshots
+
+<p align="center">
+  <img src="screenshots/Splashscreen.jpeg" width="250"/>
+  <img src="screenshots/Login Panel.jpeg" width="250"/>
+  <img src="screenshots/Login Page.jpeg" width="250"/>
+</p>
+
+<p align="center">
+  <img src="screenshots/Patient Dashboard.jpeg" width="250"/>
+  <img src="screenshots/Doctor Dashboard.jpeg" width="250"/>
+  <img src="screenshots/Admin Dashboard.jpeg" width="250"/>
+</p>
+
+<p align="center">
+  <img src="screenshots/Medicine Reminder.jpeg" width="250"/>
+</p>
